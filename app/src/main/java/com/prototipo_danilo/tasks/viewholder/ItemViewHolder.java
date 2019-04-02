@@ -21,6 +21,8 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
     public TextView textparcelamento;
     public TextView imgoff;
     public AppCompatButton btnLink;
+    private ImageView imgfavorito1;
+    private ImageView imgfavorito2;
 
     public ItemViewHolder(View itemView) {
         super(itemView);
@@ -33,6 +35,15 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
         this.imgfeaturedImage = (ImageView)itemView.findViewById(R.id.imgfeaturedImage);
         this.imgoff = (TextView)itemView.findViewById(R.id.imgoff);
         this.btnLink =(AppCompatButton)itemView.findViewById(R.id.btnLink);
+        imgfavorito1 = (ImageView) itemView.findViewById(R.id.imgfavorito1);
+        imgfavorito2 = (ImageView) itemView.findViewById(R.id.imgfavorito2);
+        imgfavorito1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imgfavorito1.setVisibility(View.GONE);
+                imgfavorito2.setVisibility(View.VISIBLE);
+            }
+        });
 
         //tachado no lastprice
         this.textlastprice.setPaintFlags(this.textlastprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);

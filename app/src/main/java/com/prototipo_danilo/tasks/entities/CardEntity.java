@@ -1,5 +1,8 @@
 package com.prototipo_danilo.tasks.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CardEntity {
 
     private String Name;
@@ -92,5 +95,23 @@ public class CardEntity {
 
     public void setImageTAG(String imageTAG) {
         this.imageTAG = imageTAG;
+    }
+
+    //metodos
+    public static List<CardEntity> FiltraCard(List<CardEntity> list, String campo, String param){
+        List<CardEntity> listins=new ArrayList<>();
+
+        //filtra por nome
+        if(campo.contains("Nome")) {
+
+            for (CardEntity card : list) {
+                if (card.getName().contains(param))
+                {
+                    listins.add(card);
+                }
+            }
+        }
+
+        return listins;
     }
 }
