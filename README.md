@@ -1,3 +1,3 @@
 # Template - Tasks
 
-Aplicacao criada como modelo(template) para aplicaçoes comerciais - Danilo Moreira 
+Aplicacao criada para contemplar o desafio Mobile, Mobfiq.
