@@ -1,3 +1,3 @@
 # Template - Tasks
 
-Aplicacao criada para comtemplar o desafio Mobile, Mobfiq.
+Aplicacao criada para contemplar o desafio Mobile, Mobfiq.
