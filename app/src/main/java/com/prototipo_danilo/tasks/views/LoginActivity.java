@@ -10,12 +10,12 @@ import android.widget.ProgressBar;
 import com.prototipo_danilo.tasks.R;
 import com.prototipo_danilo.tasks.infra.SecurityPreferences;
 import com.prototipo_danilo.tasks.infra.operation.OperationListener;
-import com.prototipo_danilo.tasks.manager.PersonManager;
+import com.prototipo_danilo.tasks.manager.APIManager;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ViewHolder mViewHolder = new ViewHolder();
-    private PersonManager mPersonManager;
+    private APIManager mAPIManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         this.mViewHolder.buttonLogin = (Button) this.findViewById(R.id.button_login);
         this.mViewHolder.progressBarActvitys = (ProgressBar)this.findViewById(R.id.prb_aguarde);
         this.mViewHolder.progressBarActvitys.setVisibility(View.GONE);
-        this.mPersonManager = new PersonManager(this);
+        this.mAPIManager = new APIManager(this);
 
         // Inicializa eventos
         this.mViewHolder.buttonLogin.setOnClickListener(this);
@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void ExecutaApi()  {
-        this.mPersonManager.Create(registerListener());//criado o listener para receber o retorno
+        this.mAPIManager.Create(registerListener());//chamada assincrona - criado o listener para receber o retorno
     }
 
     private OperationListener registerListener(){

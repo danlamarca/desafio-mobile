@@ -3,16 +3,16 @@ package com.prototipo_danilo.tasks.manager;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.prototipo_danilo.tasks.business.PersonBusiness;
+import com.prototipo_danilo.tasks.business.APIBusiness;
 import com.prototipo_danilo.tasks.infra.operation.OperationListener;
 import com.prototipo_danilo.tasks.infra.operation.OperationResult;
 
-public class PersonManager {
+public class APIManager {
 
-    private PersonBusiness mpersonBusiness;
+    private APIBusiness mapiBusiness;
 
-    public PersonManager(Context context){
-        this.mpersonBusiness = new PersonBusiness(context);
+    public APIManager(Context context){
+        this.mapiBusiness = new APIBusiness(context);
     }
 
     public void Create(final OperationListener listener){
@@ -20,7 +20,7 @@ public class PersonManager {
             @Override
             protected OperationResult<Boolean> doInBackground(Void... voids) {
                 //implentacao da Businnes
-                return mpersonBusiness.create();
+                return mapiBusiness.create();
             }
 
             @Override

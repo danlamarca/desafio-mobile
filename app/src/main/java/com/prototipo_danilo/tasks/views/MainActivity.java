@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.prototipo_danilo.tasks.R;
 import com.prototipo_danilo.tasks.adapter.ItemAdapter;
+import com.prototipo_danilo.tasks.business.CardBusiness;
 import com.prototipo_danilo.tasks.entities.BestInstallment;
 import com.prototipo_danilo.tasks.entities.CardEntity;
 import com.prototipo_danilo.tasks.entities.ImageT;
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 List<CardEntity> cards = new ArrayList<>();
-                cards = CardEntity.FiltraCard(OperationCards.CarregaCardsByProd(getApplicationContext()),
+                cards = CardBusiness.FiltraCard(OperationCards.CarregaCardsByProd(getApplicationContext()),
                         "Nome",textpesq.getText().toString());
                 CarregaCards(cards);
                 textresultadopesq.setText(textpesq.getText().toString());

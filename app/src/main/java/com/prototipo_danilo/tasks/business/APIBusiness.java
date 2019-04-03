@@ -34,12 +34,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-public class PersonBusiness {
+public class APIBusiness {
 
     private ExternalRepository mExternalRepository;
     private Context mcontext;
 
-    public PersonBusiness(Context context){
+    public APIBusiness(Context context){
         this.mExternalRepository = new ExternalRepository(context);
         this.mcontext = context;
     }

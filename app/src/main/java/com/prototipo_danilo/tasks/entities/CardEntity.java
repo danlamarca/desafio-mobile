@@ -98,14 +98,14 @@ public class CardEntity {
     }
 
     //metodos
-    public static List<CardEntity> FiltraCard(List<CardEntity> list, String campo, String param){
+    public static List<CardEntity> getListByparam(List<CardEntity> list, String campo, String param){
         List<CardEntity> listins=new ArrayList<>();
 
         //filtra por nome
         if(campo.contains("Nome")) {
 
             for (CardEntity card : list) {
-                if (card.getName().contains(param))
+                if (card.getName().toUpperCase().contains(param.toUpperCase()))
                 {
                     listins.add(card);
                 }
